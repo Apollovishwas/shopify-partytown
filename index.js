@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.use('/proxy', express.static('./proxy'));
 
 app.get('/', (req, res) => {
-  res.send('Hello Justin!');
+  res.send('Hello PartyTown!');
 });
 
 app.use('/reverse-proxy', async (req, res) => {
