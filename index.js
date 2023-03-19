@@ -26,7 +26,7 @@ app.use(cors({
 app.use('/proxy', express.static('./proxy'));
 
 app.get('/', (req, res) => {
-  res.send('Hello PartyTown!');
+  res.send('Hello PartyTown 2.0');
 });
 
 app.use('/reverse-proxy', async (req, res) => {
