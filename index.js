@@ -8,7 +8,7 @@ const cookie = require('cookie');
 const nonce = require('nonce')();
 const querystring = require('querystring');
 const request = require('request-promise');
-
+const cors = require('cors');
 const apiKey = process.env.SHOPIFY_API_KEY;
 const apiSecret = process.env.SHOPIFY_API_SECRET;
 const scopes = 'read_products';
@@ -20,7 +20,9 @@ app.use((req, res, next) => {
   console.log(req.path);
   next();
 })
-
+app.use(cors({
+  origin: 'https://partytownlib.myshopify.com' // Replace with your desired origin(s)
+}));
 app.use('/proxy', express.static('./proxy'));
 
 app.get('/', (req, res) => {
